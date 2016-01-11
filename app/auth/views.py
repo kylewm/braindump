@@ -208,7 +208,7 @@ def authorized(auth):
         elif user is not None:
             user.confirmed=True
             db.session.commit()
-            login_user(user)
+        login_user(user)
         return redirect(request.args.get('next') or url_for('main.index'))
 
 
